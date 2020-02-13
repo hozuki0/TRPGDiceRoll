@@ -6,8 +6,8 @@ import (
 
 func TestDiceRoll(t *testing.T) {
 	result, err := DiceRoll("1d6")
-	if err == nil {
-		t.Errorf("DiceRoll returns nil")
+	if err != nil {
+		t.Errorf("DiceRoll returns error:%s", err)
 	}
 	if !isInRange(result, 1, 6) {
 		t.Errorf("DiceRoll result is out of range")
